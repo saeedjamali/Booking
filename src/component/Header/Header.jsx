@@ -1,16 +1,34 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { MdLocationOn, MdSearch } from 'react-icons/md'
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi'
 import { Button } from 'flowbite-react';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 
 function Header() {
 
     const [destination, setDestination] = useState("");
     const [openOptions, setOpenOptions] = useState(false);
-    const [options, setOptions] = useState({ adult: 1, children: 0, room: 0 });
+    const [options, setOptions] = useState([{ id: 1, name: "adult", quantity: 0 }, { id: 2, name: "children", quantity: 0 }, { id: 3, name: "room", quantity: 0 }]);
+    const [titleOption, setTitleOption] = useState("0 adult . 0 Children . 0 Room");
+
+    const handleQuantity = (op, id) => {
+        let title = "";
+        const chngOptions = [...options];
+        if (op == "plus") {
+            chngOptions.map((op) => op.id == id ? op.quantity++ : "");
+        } else if (op == "minus") {
+            chngOptions.map((op) => op.id == id ? op.quantity-- : "");
+        }
+        setOptions(chngOptions);
+        options.map((op, index) => {
+            title += op.quantity + ' ' + op.name + (options.length == index + 1 ? "" : "-");
+        })
+        setTitleOption(title);
+    }
     return (
         <div>
+
             <header className='flex item-center justify-center m-2 p-2'>
                 <div>
                     <span className='mx-4 h-full flex items-center '>Home </span>
@@ -27,9 +45,13 @@ function Header() {
                             <HiCalendar className='text-purple-600 mr-2' />
                             <div>2023/06/24</div>
                         </div>
-                        <div className='col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer' onClick={() => setOpenOptions(!openOptions)}>
-                            {openOptions && <GuestOptionalList />}
+                        <div  className='col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer' >
+                            <div id="GuestOptionalList" className='w-full center' onClick={() => setOpenOptions(!openOptions)}>
+                                {titleOption}
+                            </div>
+                            {openOptions && <GuestOptionalList options={options} onOptions={handleQuantity} setOpenOptions={setOpenOptions} />}
                         </div>
+
                         <div className='col-span-1 center'>
                             <span className='bg-purple-400 text-white text-lg rounded-lg p-2'><MdSearch /></span>
                         </div>
@@ -45,30 +67,33 @@ export default Header
 
 
 
-function GuestOptionalList() {
+function GuestOptionalList({ options, onOptions, setOpenOptions }) {
 
+    const optionsRef = useRef();
+
+    useOutsideClick(optionsRef, () => setOpenOptions(false), "GuestOptionalList");
     return (
 
-        <div className='absolute w-48  p-2 top-[100%] border-[1px] shadow-lg border-slate-200 rounded-lg  bg-gray-50 '>
-            <GuestOptionItem />
-            <GuestOptionItem />
-            <GuestOptionItem />
-            <GuestOptionItem />
+        <div  className='absolute w-48  p-2 top-[100%] border-[1px] shadow-lg border-slate-200 rounded-lg  bg-gray-50 ' ref={optionsRef}>
+            {
+                [...options].map((option) => <GuestOptionItem option={option} onOptions={onOptions} />)
+            }
         </div>);
 }
 
 
-function GuestOptionItem() {
+function GuestOptionItem({ option, onOptions }) {
+    const quantity = option.quantity;
     return (
-        <div className='flex items-center justify-around mt-2 '>
-            <span>adult</span>
+        <div key={option.id} className='flex items-center justify-around mt-2  '>
+            <span className='flex-1 text-base'>{option.name}</span>
             <div className='center '>
 
-                <Button className='bg-slate-200  text-black rounded-md center w-5 h-5'><HiMinus className='text-[12px]' /></Button>
-                <span className='mx-2 w-5 h-5 center text-base'>1</span>
-                <Button className='bg-slate-200 text-black rounded-md w-5 h-5 center '><HiPlus className='text-[12px]' /></Button>
+                <Button className='bg-slate-200  text-black rounded-md center w-5 h-5 ' disabled={quantity < 1} onClick={() => onOptions("minus", option.id)} ><HiMinus className='text-[12px]' /></Button>
+                <span className='mx-2 w-5 h-5 center text-base'>{quantity}</span>
+                <Button className='bg-slate-200 text-black rounded-md w-5 h-5 center ' onClick={() => onOptions("plus", option.id)} ><HiPlus className='text-[12px]' /></Button>
 
             </div>
-        </div>
+        </div >
     )
 }
