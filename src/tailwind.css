@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+
+    .center {
+        @apply flex flex-row items-center justify-center;
+    }
+
+    .text-input {
+        @apply outline-none border-none text-sm font-thin focus:outline-none border-transparent focus:border-transparent focus:ring-0;
+    }
+
+    .link {
+        @apply px-4 py-2 block hover:bg-slate-300;
+
+    }
+
+    .nav-items {
+        @apply hover:bg-gray-600 inline-block w-full h-full text-center rounded-sm mx-2 text-white ring-slate-800 ring-1 py-1 mt-1 sm:mt-0 shadow-md;
+    }
+
+
+    .badge--secondary {
+        @apply font-thin text-[16px] bg-slate-300 rounded-md px-1 flex items-center justify-center text-stone-500;
+    }
+
+
+    .badge--modified {
+        @apply font-thin text-[16px] bg-slate-300 rounded-md px-1 flex items-center justify-center text-stone-500;
+    }
+
+
+    .badge--completed {
+        @apply font-thin text-[16px] bg-green-300 text-green-950 rounded-md px-1 flex items-center justify-center text-stone-500;
+    }
+
+    .badge--uncompleted {
+        @apply font-thin text-[16px] bg-red-300 text-red-950 rounded-md px-1 flex items-center justify-center text-stone-500;
+    }
+
+
+    .badge--counter {
+        @apply bg-slate-400 rounded-full px-2 text-white;
+    }
+
+
+    .input__text {
+        @apply p-2 w-full bg-slate-50 rounded-md mt-2 outline-1 outline-purple-700;
+    }
+
+    .btn__submit {
+        @apply px-4 py-2 w-full text-white bg-blue-400 rounded-md mt-4 text-lg font-medium;
+    }
+
+    .note__style {
+        @apply bg-white rounded-md p-2 flex flex-col items-center justify-around
+    }
+}
