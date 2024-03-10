@@ -2,12 +2,16 @@ import React, { useRef, useState } from 'react'
 import { MdLocationOn, MdSearch } from 'react-icons/md'
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi'
 import { Button } from 'flowbite-react';
+import '../../../public/customStyle.css'
+
 import useOutsideClick from '../hooks/useOutsideClick';
 import DatePicker, { DateObject } from "react-multi-date-picker"
 // import persian from "react-date-object/calendars/persian"
 import gregorian from "react-date-object/calendars/gregorian"
 // import persian_fa from "react-date-object/locales/persian_fa"
 import gregorian_en from "react-date-object/locales/gregorian_en"
+import { Link, Navigate, createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
+import Hotel from '../../pages/Hotel';
 
 
 function Header() {
@@ -20,6 +24,10 @@ function Header() {
         new DateObject({ calendar: gregorian }).subtract(4, "days"),
         new DateObject({ calendar: gregorian }).add(4, "days")
     ])
+    const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
+
+
 
     const handleQuantity = (op, id) => {
         let title = "";
@@ -36,32 +44,42 @@ function Header() {
         setTitleOption(title);
     }
 
-    function handleChange(value) {
+    const handleChange = (values) => {
         //تغییرات روی تاریخ رو اینجا اعمال کنید
-        setValues(value)
+        setValues(values)
     }
 
+    const handleSearch = () => {
+        console.log(values[0]);
+        const encodedParams = createSearchParams({
+            date: JSON.stringify(values),
+            destination,
+            options: JSON.stringify(options)
+        })
 
+        setSearchParams({ values, destination, options });
+        // navigate("/hotels");
+    }
 
     return (
         <div>
 
             <header className='flex item-center justify-center m-2 p-2'>
                 <div>
-                    <span className='mx-4 h-full flex items-center '>Home </span>
+                    <span className='mx-4 h-full  items-center hidden md:flex'>Home </span>
                 </div>
                 <div className='w-full '>
-                    <div className='grid grid-cols-7  border-gray-200 border-[1px] rounded-xl py-2 '>
-                        <div className='col-span-2 pr-2 center'>
+                    <div className='grid grid-cols-8  border-gray-200 border-[1px] rounded-xl py-2 gap-2'>
+                        <div className='col-span-4 md:col-span-2 pr-2 center'>
                             <form onSubmit={""} className='center w-full ml-4 outline-none border-r-[1px] border-r-gray-200'>
                                 <span className='text-red-400'><MdLocationOn /> </span>
                                 <input className="text-input w-full" type="text" placeholder='Where to go ?' value={destination} onChange={(e) => setDestination(e.target.value)} />
                             </form>
                         </div>
-                        <div className='col-span-2 center border-r-[1px] border-r-gray-200'>
+                        <div className='col-span-4  md:col-span-2 center border-r-[1px] border-r-gray-200'>
                             <HiCalendar className='text-purple-600 mr-2' />
-                            <div >
-                                <DatePicker className='w-full'
+                            <div className='w-full'>
+                                <DatePicker
                                     style={{
                                         outline: "none",
                                         backgroundColor: "aliceblue",
@@ -84,15 +102,15 @@ function Header() {
                                 />
                             </div>
                         </div>
-                        <div className='col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer' >
+                        <div className='col-span-4 md:col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer text-[12px] md:text-[16px]' >
                             <div id="GuestOptionalList" className='w-full center' onClick={() => setOpenOptions(!openOptions)}>
                                 {titleOption}
                             </div>
                             {openOptions && <GuestOptionalList options={options} onOptions={handleQuantity} setOpenOptions={setOpenOptions} />}
                         </div>
 
-                        <div className='col-span-1 center'>
-                            <span className='bg-purple-400 text-white text-lg rounded-lg p-2'><MdSearch /></span>
+                        <div className='col-span-4 md:col-span-2 center'>
+                            <button className='bg-purple-400 text-white text-lg rounded-lg p-2' onClick={handleSearch}><MdSearch /></button>
                         </div>
                     </div>
                 </div>

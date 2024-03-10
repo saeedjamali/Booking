@@ -23,10 +23,12 @@ export default function useFetch(url, query = "") {
             } finally {
                 setIsLoading(false)
             }
+
+
         }
         fetchData();
 
     }, [query, url]);
 
-    return { isLoading, data };
+    return { data, isLoading };
 }
