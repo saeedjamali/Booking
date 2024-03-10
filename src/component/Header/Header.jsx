@@ -55,17 +55,17 @@ function Header() {
                         <div className='col-span-2 pr-2 center'>
                             <form onSubmit={""} className='center w-full ml-4 outline-none border-r-[1px] border-r-gray-200'>
                                 <span className='text-red-400'><MdLocationOn /> </span>
-                                <input className="text-input" type="text" placeholder='Where to go ?' value={destination} onChange={(e) => setDestination(e.target.value)} />
+                                <input className="text-input w-full" type="text" placeholder='Where to go ?' value={destination} onChange={(e) => setDestination(e.target.value)} />
                             </form>
                         </div>
                         <div className='col-span-2 center border-r-[1px] border-r-gray-200'>
                             <HiCalendar className='text-purple-600 mr-2' />
-                            <div className='w-full '>
-                                <DatePicker
+                            <div >
+                                <DatePicker className='w-full'
                                     style={{
                                         outline: "none",
                                         backgroundColor: "aliceblue",
-                                        height: "24px",
+                                        height: "36px",
                                         width: "100%",
                                         border: "none",
                                         borderRadius: "8px",

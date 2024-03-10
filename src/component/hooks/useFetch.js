@@ -14,12 +14,12 @@ export default function useFetch(url, query = "") {
                 setIsLoading(true);
                 const { data } = await axios.get(`${url}?${query}`);
                 setData(data);
-                console.log("Where0", data);
 
             } catch (error) {
-                console.log("Where2");
                 setData([]);
-                toast.error(error.message);
+                toast.error(error.message, {
+                    position: "bottom-center"
+                });
             } finally {
                 setIsLoading(false)
             }
@@ -28,5 +28,5 @@ export default function useFetch(url, query = "") {
 
     }, [query, url]);
 
-    return { isLoading, data }
+    return { isLoading, data };
 }
