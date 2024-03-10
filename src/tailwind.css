@@ -5,6 +5,10 @@
 @layer components {
 
 
+    .rtl {
+        direction: rtl;
+    }
+
     .center {
         @apply flex flex-row items-center justify-center;
     }

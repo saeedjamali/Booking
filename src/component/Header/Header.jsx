@@ -3,6 +3,11 @@ import { MdLocationOn, MdSearch } from 'react-icons/md'
 import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi'
 import { Button } from 'flowbite-react';
 import useOutsideClick from '../hooks/useOutsideClick';
+import DatePicker, { DateObject } from "react-multi-date-picker"
+// import persian from "react-date-object/calendars/persian"
+import gregorian from "react-date-object/calendars/gregorian"
+// import persian_fa from "react-date-object/locales/persian_fa"
+import gregorian_en from "react-date-object/locales/gregorian_en"
 
 
 function Header() {
@@ -11,6 +16,10 @@ function Header() {
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState([{ id: 1, name: "adult", quantity: 0 }, { id: 2, name: "children", quantity: 0 }, { id: 3, name: "room", quantity: 0 }]);
     const [titleOption, setTitleOption] = useState("0 adult . 0 Children . 0 Room");
+    const [values, setValues] = useState([
+        new DateObject({ calendar: gregorian }).subtract(4, "days"),
+        new DateObject({ calendar: gregorian }).add(4, "days")
+    ])
 
     const handleQuantity = (op, id) => {
         let title = "";
@@ -22,10 +31,18 @@ function Header() {
         }
         setOptions(chngOptions);
         options.map((op, index) => {
-            title += op.quantity + ' ' + op.name + (options.length == index + 1 ? "" : "-");
+            title += op.quantity + ' ' + op.name + (options.length == index + 1 ? "" : " - ");
         })
         setTitleOption(title);
     }
+
+    function handleChange(value) {
+        //تغییرات روی تاریخ رو اینجا اعمال کنید
+        setValues(value)
+    }
+
+
+
     return (
         <div>
 
@@ -43,9 +60,31 @@ function Header() {
                         </div>
                         <div className='col-span-2 center border-r-[1px] border-r-gray-200'>
                             <HiCalendar className='text-purple-600 mr-2' />
-                            <div>2023/06/24</div>
+                            <div className='w-full '>
+                                <DatePicker
+                                    style={{
+                                        outline: "none",
+                                        backgroundColor: "aliceblue",
+                                        height: "24px",
+                                        width: "100%",
+                                        border: "none",
+                                        borderRadius: "8px",
+                                        fontSize: "12px",
+                                        padding: "3px 10px"
+
+                                    }}
+                                    value={values}
+                                    onChange={handleChange}
+                                    dateSeparator=" to "
+                                    range
+                                    calendar={gregorian}
+                                    locale={gregorian_en}
+                                    calendarPosition="bottom-right"
+                                    minDate={new Date()}
+                                />
+                            </div>
                         </div>
-                        <div  className='col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer' >
+                        <div className='col-span-2 center relative border-r-[1px] border-r-gray-200 cursor-pointer' >
                             <div id="GuestOptionalList" className='w-full center' onClick={() => setOpenOptions(!openOptions)}>
                                 {titleOption}
                             </div>
@@ -74,7 +113,7 @@ function GuestOptionalList({ options, onOptions, setOpenOptions }) {
     useOutsideClick(optionsRef, () => setOpenOptions(false), "GuestOptionalList");
     return (
 
-        <div  className='absolute w-48  p-2 top-[100%] border-[1px] shadow-lg border-slate-200 rounded-lg  bg-gray-50 ' ref={optionsRef}>
+        <div className='absolute w-48  p-2 top-[100%] border-[1px] shadow-lg border-slate-200 rounded-lg  bg-gray-50 ' ref={optionsRef}>
             {
                 [...options].map((option) => <GuestOptionItem option={option} onOptions={onOptions} />)
             }
