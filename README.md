@@ -9,6 +9,12 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-
-i use persian DateRange in this project:
+in this project we use : 
+1-use persian DateRange in this project:
 https://shahabyazdi.github.io/react-multi-date-picker/fa/multiple/
+
+2-use nested router and layout
+3-use search params when params is Object (with createSearchParams)
+4-install json-server and define useFetch with axios
+5-define hook useOutsideClock
+6-
