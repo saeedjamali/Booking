@@ -15,6 +15,6 @@ https://shahabyazdi.github.io/react-multi-date-picker/fa/multiple/
 
 2-use nested router and layout
 3-use search params when params is Object (with createSearchParams)
-4-install json-server and define useFetch with axios
+4-install json-server and define useFetch with axios and react-hot-toast
 5-define hook useOutsideClock
-6-
+6
