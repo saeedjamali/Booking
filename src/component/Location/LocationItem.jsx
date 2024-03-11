@@ -5,7 +5,7 @@ function LocationItem({ hotel }) {
   return (
     <div className='col-span-4 md:col-span-2 lg:col-span-1 bg-stone-50 w-full rounded-lg'>
       <div >
-        <img src={hotel.picture_url.url} alt='Loading...' className='rounded-t-lg w-full h-48 ' />
+        <img src={hotel.picture_url.url} alt={hotel.host_location} className='rounded-t-lg w-full h-48 ' />
       </div>
       <div className='space-y-2 p-4'>
         <div>{hotel.host_location}</div>

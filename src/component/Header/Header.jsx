@@ -57,23 +57,23 @@ function Header() {
             options: JSON.stringify(options)
         })
 
-        setSearchParams({ values, destination, options });
-        // navigate("/hotels");
+        // setSearchParams({ values, destination, options });
+        navigate({ pathname: "/hotels", search: encodedParams.toString() });
     }
 
     return (
-        <div>
+        <div className='bg-slate-50  fixed top-0 left-0 right-0'>
 
-            <header className='flex item-center justify-center m-2 p-2'>
+            <header className='flex item-center justify-center m-1 p-1 '>
                 <div>
                     <span className='mx-4 h-full  items-center hidden md:flex'>Home </span>
                 </div>
                 <div className='w-full '>
                     <div className='grid grid-cols-8  border-gray-200 border-[1px] rounded-xl py-2 gap-2'>
                         <div className='col-span-4 md:col-span-2 pr-2 center'>
-                            <form onSubmit={""} className='center w-full ml-4 outline-none border-r-[1px] border-r-gray-200'>
+                            <form onSubmit={""} className='center w-full ml-4 outline-none border-r-[1px] border-r-gray-200 px-2'>
                                 <span className='text-red-400'><MdLocationOn /> </span>
-                                <input className="text-input w-full" type="text" placeholder='Where to go ?' value={destination} onChange={(e) => setDestination(e.target.value)} />
+                                <input className="text-input w-full rounded-lg  " type="text" placeholder='Where to go ?' value={destination} onChange={(e) => setDestination(e.target.value)} />
                             </form>
                         </div>
                         <div className='col-span-4  md:col-span-2 center border-r-[1px] border-r-gray-200'>
