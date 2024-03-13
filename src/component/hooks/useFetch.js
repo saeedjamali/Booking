@@ -14,15 +14,16 @@ export default function useFetch(url, query = "") {
                 setIsLoading(true);
                 const { data } = await axios.get(`${url}?${query}`);
                 setData(data);
-
+                console.log("data is :", data);
             } catch (error) {
-                setData([]);
+                // setData([]);
                 toast.error(error.message, {
                     position: "bottom-center"
                 });
             } finally {
                 setIsLoading(false)
             }
+
 
 
         }

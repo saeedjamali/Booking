@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Hotel({ hotel }) {
+function HotelItem({ hotel }) {
     return (
         <div className='w-full h-17 bg-stone-100 mt-2 p-2 flex justify-around items-center rounded-lg mr-4'>
             <div className=''>
@@ -19,4 +19,4 @@ function Hotel({ hotel }) {
     )
 }
 
-export default Hotel
+export default HotelItem
