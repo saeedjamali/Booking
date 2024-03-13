@@ -1,17 +1,18 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import '../../public/customStyle.css'
+import Map from '../component/Map/Map'
 
 
 function HotelLayout() {
     return (
         <div className='p-4 mt-16 '>
             <div className='grid grid-cols-3 h-[calc(100vh-6rem)]'>
-                <div className='col-span-1 bg-green-300 overflow-y-scroll '>
-                   <Outlet />
+                <div className='col-span-1  overflow-y-scroll  p-2'>
+                    <Outlet />
                 </div>
-                <div className='col-span-2 bg-purple-700 ' >
-                    Map
+                <div className='col-span-2 p-4 ' >
+                    <Map />
                 </div>
             </div>
         </div >

@@ -1,3 +1,5 @@
+@import url("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css");
+
 .rmdp-container {
     display: inline-block;
     height: max-content;
@@ -7,7 +9,7 @@
 
 /* app layout */
 .appLayout {
-   
+
     display: flex;
     justify-content: space-between;
     /* height: calc(100vh - 130px); */

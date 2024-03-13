@@ -15,8 +15,8 @@ import Hotel from '../../pages/Hotel';
 
 
 function Header() {
-
-    const [destination, setDestination] = useState("");
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [destination, setDestination] = useState(searchParams.get("destination") || "");
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState([{ id: 1, name: "adult", quantity: 0 }, { id: 2, name: "children", quantity: 0 }, { id: 3, name: "room", quantity: 0 }]);
     const [titleOption, setTitleOption] = useState("0 adult . 0 Children . 0 Room");
@@ -25,7 +25,7 @@ function Header() {
         new DateObject({ calendar: gregorian }).add(4, "days")
     ])
     const navigate = useNavigate();
-    const [searchParams, setSearchParams] = useSearchParams();
+
 
 
 
@@ -50,7 +50,7 @@ function Header() {
     }
 
     const handleSearch = () => {
-        console.log(values[0]);
+
         const encodedParams = createSearchParams({
             date: JSON.stringify(values),
             destination,
