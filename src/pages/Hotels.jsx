@@ -6,10 +6,8 @@ import { Link } from 'react-router-dom';
 import { useHotel } from '../component/context/HotelsProvider';
 import HotelItem from './HotelItem';
 
-const BASE_URL = "http://localhost:5000/hotels";
 
 function Hotels() {
-
     const { data, isLoading } = useHotel();
     if (isLoading) <Loader />
     return (

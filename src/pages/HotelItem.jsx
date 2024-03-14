@@ -1,8 +1,11 @@
 import React from 'react'
+import { useHotel } from '../component/context/HotelsProvider';
 
 function HotelItem({ hotel }) {
+    const { currentHotel } = useHotel();
+
     return (
-        <div className='w-full h-17 bg-stone-100 mt-2 p-2 flex justify-around items-center rounded-lg mr-4'>
+        <div className={`w-full h-17 bg-stone-100 mt-2 p-2 flex justify-around items-center rounded-lg mr-4 ${currentHotel?.id == hotel.id ? ' ring-purple-300 ring-1 shadow-lg shadow-purple-200' : ""}`}>
             <div className=''>
                 <img src={hotel.picture_url.url} alt={hotel.host_location} className='rounded-lg w-16 h-16 ' />
             </div>
