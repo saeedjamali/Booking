@@ -8,7 +8,7 @@ import { useHotel } from '../component/context/HotelsProvider';
 function SingleHotel() {
 
     const { id } = useParams();
-    const BASE_URL = "http://localhost:5000/hotels/" + id;
+    // const BASE_URL = "http://localhost:5000/hotels/" + id;
     const { currentHotel, isLoadingCurrentHotel, getHotel } = useHotel();
 
 
