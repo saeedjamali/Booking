@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import useFetch from '../component/hooks/useFetch';
+import useFetch from '../hooks/useFetch';
 import Loader from './Loader'
 import { Link } from 'react-router-dom';
-import { useHotel } from '../component/context/HotelsProvider';
+import { useHotel } from '../context/HotelsProvider';
 import HotelItem from './HotelItem';
 
 

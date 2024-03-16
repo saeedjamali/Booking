@@ -1,5 +1,5 @@
 import React from 'react'
-import { useHotel } from '../component/context/HotelsProvider';
+import { useHotel } from '../context/HotelsProvider';
 
 function HotelItem({ hotel }) {
     const { currentHotel } = useHotel();

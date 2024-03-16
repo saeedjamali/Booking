@@ -5,11 +5,11 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import useGeoLocaion from '../hooks/useGeoLocation';
 
 
-function Map({markerLocation}) {
+function Map({ markerLocation }) {
     const [mapCenter, setMapCenter] = useState([51.505, -0.09]);
     const [currentLocation, setCurLoction] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
-   
+
 
     const lat = searchParams.get("lat");
     const lng = searchParams.get("lng");
@@ -30,7 +30,7 @@ function Map({markerLocation}) {
     // }, [geoUserLocation]);
 
     return (
-        <div className='w-full h-full '>
+        <div className='w-full h-full -z-50 '>
             <MapContainer className='w-full h-full relative rounded-md' center={mapCenter} zoom={14} scrollWheelZoom={false}>
                 <button className='p-1 fixed bottom-[4rem] right-12 z-[1000] bg-blue-600 rounded-md shadow-lg shadow-sky-200 bottom-1 border-sky-400 text-white font-mono text-[10px]' onClick={getGeoLocation}>{isLoadingGeoLocation ? "Loading..." : "Use Your Location"}</button>
                 <TileLayer

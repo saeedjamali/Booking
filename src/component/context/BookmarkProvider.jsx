@@ -52,8 +52,21 @@ function BookmarkProvider({ children }) {
         }
     }
 
+    async function deleteBookmark(id) {
+
+        try {
+            await axios.delete(`${BASE_URL}/${id}`);
+            setBookmarks((prev) => prev.filter((bookmark) => bookmark.id != id));
+            toast.success("Removed Done!");
+        } catch (error) {
+
+            toast.error("Removed Error");
+        }
+
+    }
+
     return (
-        <BookmarkContext.Provider value={{ bookmarks, isBookmarkLoading, currentBookmark, setBookmarks, getSingleBookmark, isSingleBookmarkLoading }}>{children}</BookmarkContext.Provider>
+        <BookmarkContext.Provider value={{ bookmarks, isBookmarkLoading, currentBookmark, setBookmarks, getSingleBookmark, deleteBookmark, isSingleBookmarkLoading }}>{children}</BookmarkContext.Provider>
     )
 }
 

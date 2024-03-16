@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react'
-import { MdLocationOn, MdSearch } from 'react-icons/md'
-import { HiCalendar, HiMinus, HiPlus } from 'react-icons/hi'
+import React, { useEffect, useRef, useState } from 'react'
+import { MdBookmark, MdLocationOn, MdLogin, MdSearch } from 'react-icons/md'
+import { HiCalendar, HiLogin, HiLogout, HiMinus, HiPlus } from 'react-icons/hi'
 import { Button } from 'flowbite-react';
 import '../../../public/customStyle.css'
-
+import { Tooltip } from 'react-tooltip'
 import useOutsideClick from '../hooks/useOutsideClick';
 import DatePicker, { DateObject } from "react-multi-date-picker"
 // import persian from "react-date-object/calendars/persian"
@@ -11,6 +11,7 @@ import gregorian from "react-date-object/calendars/gregorian"
 // import persian_fa from "react-date-object/locales/persian_fa"
 import gregorian_en from "react-date-object/locales/gregorian_en"
 import { Link, Navigate, createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
 
 
 
@@ -27,7 +28,12 @@ function Header() {
     const navigate = useNavigate();
 
 
+    const { user, isAuthenticated, logout } = useAuth();
 
+
+    useEffect(() => {
+        if (!isAuthenticated) logout();
+    }, [isAuthenticated]);
 
     const handleQuantity = (op, id) => {
         let title = "";
@@ -66,7 +72,7 @@ function Header() {
 
             <header className='flex item-center justify-center m-1 p-1 '>
                 <div>
-                    <span className='mx-4 h-full  items-center hidden md:flex'>Home </span>
+                    <Link to="/" className='mx-4 h-full  items-center hidden md:flex'>Home </Link>
                 </div>
                 <div className='w-full '>
                     <div className='grid grid-cols-8  border-gray-200 border-[1px] rounded-xl py-2 gap-2'>
@@ -110,7 +116,25 @@ function Header() {
                         </div>
 
                         <div className='col-span-4 md:col-span-2 center'>
-                            <button className='bg-purple-400 text-white text-lg rounded-lg p-2' onClick={handleSearch}><MdSearch /></button>
+                            <div className=' text-white text-lg center gap-2' >
+                                <Link to="/hotels" className='group relative'>
+                                    <span className=' bg-purple-500 p-1 rounded-lg center '><MdSearch onClick={handleSearch} />
+                                    </span>
+                                    <span class="absolute block top-10 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 ">Search</span>
+                                </Link >
+                                <Link to="/bookmarks" className='group relative'>
+                                    <span className='bg-purple-500 p-1 rounded-lg center '> <MdBookmark /></span>
+                                    <span class="absolute block top-10 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 ">Bookmark</span>
+                                </Link >
+                                <Link to="/login" className={`group relative ${isAuthenticated ? " hidden" : ""}`}>
+                                    <span className='bg-purple-500 p-1 rounded-lg center'> <HiLogin /></span>
+                                    <span class="absolute block top-10 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 ">Login</span>
+                                </Link >
+                                <Link to="/login" onClick={logout} className={`group relative ${isAuthenticated ? "" : "hidden"}`}>
+                                    <span className='bg-purple-500 p-1 rounded-lg center'> <HiLogout /></span>
+                                    <span class="absolute block top-10 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 ">Logout</span>
+                                </Link >
+                            </div>
                         </div>
                     </div>
                 </div>

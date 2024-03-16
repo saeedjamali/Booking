@@ -4,7 +4,7 @@ import useReverseGeoLocation from '../hooks/useReverseGeoLocation'
 import toast from 'react-hot-toast';
 import axios from 'axios';
 import ReactCountryFlag from 'react-country-flag';
-import Loader from '../../pages/Loader'
+import Loader from '../Hotel/Loader'
 import { useBookmark } from '../context/BookmarkProvider';
 
 

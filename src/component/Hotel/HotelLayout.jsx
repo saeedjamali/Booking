@@ -1,8 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router'
-import '../../public/customStyle.css'
-import Map from '../component/Map/Map'
-import { useHotel } from '../component/context/HotelsProvider';
+import '../../../public/customStyle.css'
+import Map from '../Map/Map'
+import { useHotel } from '../context/HotelsProvider';
 
 
 function HotelLayout() {
@@ -13,7 +13,7 @@ function HotelLayout() {
                 <div className='col-span-1  overflow-y-scroll  p-2'>
                     <Outlet />
                 </div>
-                <div className='col-span-2 p-4 ' >
+                <div className='col-span-2 p-4 -z-50 ' >
                     <Map markerLocation={hotels} />
                 </div>
             </div>

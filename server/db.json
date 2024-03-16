@@ -1325,150 +1325,6 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Abalessa",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.18455079512732",
-      "longitude": "3.795523257510883",
-      "host_location": "Abalessa Algeria",
-      "id": "1"
-    },
-    {
-      "cityName": "Mahidasht",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "34.32869425037187",
-      "longitude": "46.724183117022086",
-      "host_location": "Mahidasht Iran (Islamic Republic of)",
-      "id": "4"
-    },
-    {
-      "cityName": "Sanandaj",
-      "country": "Iran (Islamic Republic of)",
-      "countryCode": "IR",
-      "latitude": "35.31372444726279",
-      "longitude": "47.03114358752335",
-      "host_location": "Sanandaj Iran (Islamic Republic of)",
-      "id": "5"
-    },
-    {
-      "cityName": "A Dakhla Oasis",
-      "country": "Egypt",
-      "countryCode": "EG",
-      "latitude": "25.02090651422749",
-      "longitude": "29.09059588509316",
-      "host_location": "A Dakhla Oasis Egypt",
-      "id": "7"
-    },
-    {
-      "cityName": "Baba Kot",
-      "country": "Pakistan",
-      "countryCode": "PK",
-      "latitude": "28.43528783183169",
-      "longitude": "67.78003711374224",
-      "host_location": "Baba Kot Pakistan",
-      "id": "8"
-    },
-    {
-      "id": "4919",
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.50943692143851",
-      "longitude": "-0.09348566010492167",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "620c",
-      "cityName": "Wytham",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.767839887322154",
-      "longitude": "-1.3199038732255344",
-      "host_location": "Wytham United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "9369",
-      "cityName": "Trelech",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.89344403698398",
-      "longitude": "-4.494084884483308",
-      "host_location": "Trelech United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "7f1b",
-      "cityName": "Williton",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.16728887106285",
-      "longitude": "-3.335130542127254",
-      "host_location": "Williton United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "16f7",
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.507941142609155",
-      "longitude": "-0.10215942473340345",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "0c80",
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.51264199642904",
-      "longitude": "-0.08403898575709334",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "dc18",
-      "cityName": "Chambon-sur-Voueize",
-      "country": "France",
-      "countryCode": "FR",
-      "latitude": "46.195042108660154",
-      "longitude": "2.4335126372965643",
-      "host_location": "Chambon-sur-Voueize France"
-    },
-    {
-      "id": "1954",
-      "cityName": "Alcoba",
-      "country": "Spain",
-      "countryCode": "ES",
-      "latitude": "39.36827914916014",
-      "longitude": "-4.4271845937224334",
-      "host_location": "Alcoba Spain"
-    },
-    {
-      "id": "abf1",
-      "cityName": "Ramillies",
-      "country": "Belgium",
-      "countryCode": "BE",
-      "latitude": "50.62507306341437",
-      "longitude": "4.877115820171589",
-      "host_location": "Ramillies Belgium"
-    },
-    {
-      "id": "17c5",
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.51317615367198",
-      "longitude": "-0.08721650349226451",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "0a5a",
-      "cityName": "London",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.51322956905176",
-      "longitude": "-0.09099517323141183",
-      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
       "id": "8b68",
       "cityName": "Zgierz",
       "country": "Poland",
@@ -1550,15 +1406,6 @@
       "host_location": "Vert-le-Grand France"
     },
     {
-      "id": "5d46",
-      "cityName": "Vert-le-Grand",
-      "country": "France",
-      "countryCode": "FR",
-      "latitude": "48.565532427918086",
-      "longitude": "2.339037691286228",
-      "host_location": "Vert-le-Grand France"
-    },
-    {
       "id": "7e6d",
       "cityName": "London",
       "country": "United Kingdom of Great Britain and Northern Ireland (the)",
@@ -1595,33 +1442,6 @@
       "host_location": "Fuente de Cantos Spain"
     },
     {
-      "id": "918c",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "40.68063802521456",
-      "longitude": "-14.162046603277272",
-      "host_location": " "
-    },
-    {
-      "id": "fba6",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "55.57834467218206",
-      "longitude": "3.379792373557802",
-      "host_location": " "
-    },
-    {
-      "id": "d952",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "56.96893619436121",
-      "longitude": "-0.11544379738911205",
-      "host_location": " "
-    },
-    {
       "id": "402f",
       "cityName": "London",
       "country": "United Kingdom of Great Britain and Northern Ireland (the)",
@@ -1629,51 +1449,6 @@
       "latitude": "51.5049494376284",
       "longitude": "-0.11023207632242071",
       "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
-    },
-    {
-      "id": "39ce",
-      "cityName": "Salo",
-      "country": "Finland",
-      "countryCode": "FI",
-      "latitude": "60.23981116999893",
-      "longitude": "23.1827332248398",
-      "host_location": "Salo Finland"
-    },
-    {
-      "id": "f7f3",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "37.16031654673677",
-      "longitude": "-41.57841473981662",
-      "host_location": " "
-    },
-    {
-      "id": "377d",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "-15.623036831528252",
-      "longitude": "-160.04725608223168",
-      "host_location": " "
-    },
-    {
-      "id": "3f9d",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "22.268764039073968",
-      "longitude": "-148.05889092710038",
-      "host_location": " "
-    },
-    {
-      "id": "e0a3",
-      "cityName": "",
-      "country": "",
-      "countryCode": "",
-      "latitude": "58.031372421776396",
-      "longitude": "-15.40387436395511",
-      "host_location": " "
     },
     {
       "id": "29f3",
@@ -1701,6 +1476,51 @@
       "latitude": "34.32748927571111",
       "longitude": "46.714019031703174",
       "host_location": "Mahidasht Iran (Islamic Republic of)"
+    },
+    {
+      "id": "3cb5",
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "51.52337735475174",
+      "longitude": "-0.03852550880685924",
+      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
+    },
+    {
+      "id": "8c35",
+      "cityName": "Azambuja",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "latitude": "39.232253141714914",
+      "longitude": "-8.98751227675578",
+      "host_location": "Azambuja Portugal"
+    },
+    {
+      "id": "cee1",
+      "cityName": "Bispingen",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "53.12040528310657",
+      "longitude": "10.010770705817077",
+      "host_location": "Bispingen Germany"
+    },
+    {
+      "id": "077d",
+      "cityName": "London",
+      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
+      "countryCode": "GB",
+      "latitude": "51.51422871777957",
+      "longitude": "-0.08516637300606922",
+      "host_location": "London United Kingdom of Great Britain and Northern Ireland (the)"
+    },
+    {
+      "id": "5da4",
+      "cityName": "Stockholm",
+      "country": "Sweden",
+      "countryCode": "SE",
+      "latitude": "59.263745410824924",
+      "longitude": "18.012354563117523",
+      "host_location": "Stockholm Sweden"
     }
   ]
 }

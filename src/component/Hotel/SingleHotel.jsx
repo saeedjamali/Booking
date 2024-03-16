@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom'
 import Loader from './Loader';
-import { useHotel } from '../component/context/HotelsProvider';
+import { useHotel } from '../context/HotelsProvider';
 
 
 

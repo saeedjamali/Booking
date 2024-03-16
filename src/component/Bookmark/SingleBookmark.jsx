@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useBookmark } from '../context/BookmarkProvider'
-import Loader from '../../pages/Loader';
+import Loader from '../Hotel/Loader';
 import { useNavigate, useParams } from 'react-router';
 import ReactCountryFlag from 'react-country-flag';
 
